@@ -6,4 +6,4 @@ Le gestionnaire d'erreurs global est utilisé pour capturer toutes les erreurs et
 
 Les erreurs de type **AppException** sont traitées comme des erreurs personnalisées (spécifiques à l'application) qui renvoient une réponse **400 Bad Request**, la classe **KeyNotFoundException** intégrée .NET est utilisée pour renvoyer des réponses **404 Not Found**, toutes les autres exceptions ne sont pas gérées et renvoient une **500 Internal Server Error** réponse ainsi que d'être connecté à la console.
 
-Consultez le **account service** pour des exemples d'erreurs personnalisées et d'erreurs introuvables générées par l'API.
+Consultez le **[account service](https://github.com/dateka/ElevenCherryDoc/blob/main/Account/Services/AccountService.md)** pour des exemples d'erreurs personnalisées et d'erreurs introuvables générées par l'API.
