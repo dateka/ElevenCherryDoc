@@ -6,7 +6,7 @@ AccountsController définit et gère toutes les routes / endpoints pour l'API qui 
 Dans chaque méthode de routage, le contrôleur appelle le service de compte pour effectuer l'action requise, ce qui permet au contrôleur de rester « allégé » et complètement séparé de la logique métier et du code d'accès aux données.
 
 Les routes qui nécessitent une autorisation incluent l'attribut **[Authorize]** et spécifient éventuellement un rôle (par exemple **[Authorize(Role.Admin)]**, si un rôle est spécifié, la route est limitée aux utilisateurs de ce rôle, sinon la route est limitée à tous les utilisateurs authentifiés utilisateurs quel que soit leur rôle.   
-La logique d'authentification se trouve dans **custom authorize attribute**.
+La logique d'authentification se trouve dans **[custom authorize attribute](https://github.com/dateka/ElevenCherryDoc/blob/main/Account/Helpers/CustomAuthorizeAttribute.md)**.
 
 Les méthodes de routage **RevokeToken**, **GetById**, **Update** et **Delete** incluent une vérification d'autorisation personnalisée supplémentaire pour empêcher les utilisateurs non administrateurs d'accéder à des comptes autres que le leur.   
 Ainsi, les comptes d'utilisateurs réguliers **(Role.User)** ont un accès CRUD à leur propre compte mais pas aux autres, et les comptes administrateur **(Role.Admin)** ont un accès CRUD complet à tous les comptes.
